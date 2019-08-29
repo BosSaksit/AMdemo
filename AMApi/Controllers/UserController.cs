@@ -14,9 +14,9 @@ namespace AMApi.Controllers
     {
         public static List<User> DataUser = new List<User>
         {
-            new User { IdUser = "1", NameUser = "admin1" , TelUser = "0165466516" , LevelUser = "Admin" ,AddressUser = "15/8 ขอนแก่น"},
-            new User { IdUser = "2", NameUser = "admin2" , TelUser = "0665606411" , LevelUser = "Meneger" ,AddressUser = "8/1 นครพนม"},
-            new User { IdUser = "3", NameUser = "admin3" , TelUser = "0916113237" , LevelUser = "Head" ,AddressUser = "15/8 นครราชสีมา"}
+            new User { IdUser = "1", NameUser = "admin1" , Username =  "1234", Password = "1234" ,TelUser = "0165466516" , LevelUser = "Admin" ,AddressUser = "15/8 ขอนแก่น"},
+            new User { IdUser = "2", NameUser = "admin2" , Username =  "12345", Password = "12345" ,TelUser = "0665606411" , LevelUser = "Meneger" ,AddressUser = "8/1 นครพนม"},
+            new User { IdUser = "3", NameUser = "admin3" , Username =  "123456", Password = "123456" ,TelUser = "0916113237" , LevelUser = "Head" ,AddressUser = "15/8 นครราชสีมา"}
         };
 
         [HttpGet]
@@ -40,6 +40,8 @@ namespace AMApi.Controllers
                 IdUser = id,
                 NameUser = Userx.NameUser,
                 TelUser = Userx.TelUser,
+                Username = Userx.Username,
+                Password = Userx.Password,
                 LevelUser = Userx.LevelUser,
                 AddressUser = Userx.AddressUser
             };
@@ -57,6 +59,8 @@ namespace AMApi.Controllers
                 IdUser = id,
                 NameUser = Userx.NameUser,
                 TelUser = Userx.TelUser,
+                Username = Userx.Username,
+                Password = Userx.Password,
                 LevelUser = Userx.LevelUser,
                 AddressUser = Userx.AddressUser
             };
