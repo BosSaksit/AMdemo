@@ -4,6 +4,55 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <h2 text-center>คลังสินค้า</h2>
+  <ion-button type="submit" [routerLink]="['/add-store']">เพิ่มสินค้า</ion-button>
+  <ion-row>
+    <ion-col>
+      <ion-label>
+        รหัสสินค้า
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        แก้ไขสินค้า
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        ล้างสินค้า
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-item *ngFor="let s of dataStoreAll">
+
+    <ion-col>
+      <ion-label>
+        {{s.idStore}}
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="warning" (click)="EditStore(s.idStore)">แก้ไขสินค้า </ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="danger" (click)="ClearStores(s.idStore)"> ล้างสินค้า</ion-button>
+    </ion-col>
+
+
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label>รายการ</ion-label>
+    <ion-select placeholder="เลือกรายการที่ต้องการ">
+      <ion-select-option>เพิ่มสินค้า</ion-select-option>
+      <ion-select-option>แก้ไขสินค้า</ion-select-option>
+      <ion-select-option>ล้างสินค้า</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
 
 </ion-content>

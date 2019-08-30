@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>editStore</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="dataStore" (ngSubmit)="log()">
+        <ion-item [class.invalid]="submit && f.idStore.errors">
+          <ion-label>แก้ไขสินค้า</ion-label>
+          <ion-input placeholder="รหัสสินค้า" formControlName="idStore">
+          </ion-input>
+        </ion-item>
+        <ion-button expand="full" type="submit">แก้ไข</ion-button>
+      </form>
+</ion-content>
