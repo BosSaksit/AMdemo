@@ -8,12 +8,21 @@
 </ion-header>
 
 <ion-content>
-    <form [formGroup]="dataStore" (ngSubmit)="log()">
+    <!-- <form [formGroup]="dataStore" (ngSubmit)="log()">
         <ion-item [class.invalid]="submit && f.idStore.errors">
           <ion-label>แก้ไขสินค้า</ion-label>
           <ion-input placeholder="รหัสสินค้า" formControlName="idStore">
           </ion-input>
         </ion-item>
         <ion-button expand="full" type="submit">แก้ไข</ion-button>
-      </form>
+      </form> -->
+
+      <div *ngIf="dataStore != null" text-center>
+        <ion-label>แก้ไขสินค้า</ion-label>
+        <br>
+        <ion-label>รหัสสินค้า : {{ dataStore.idStore }}</ion-label>
+        <br>
+        <ion-button expand="round" (click)="editlog()">แก้ไข</ion-button>
+      </div>
+     
 </ion-content>

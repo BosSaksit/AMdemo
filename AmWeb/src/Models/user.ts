@@ -1,14 +1,19 @@
-export class user{
+export class user {
 
-        idUser:string;
+        idUser: string;
 
-        nameUser:string;
+        nameUser: string;
 
-        telUser:string;
+        telUser: string;
 
-        levelUser:string;
+        levelUser: string;
 
-        addressUser:string;
+        addressUser: string;
+
+        username: string;
+        
+        password: string;
+
 
 
 

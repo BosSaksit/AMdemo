@@ -27,6 +27,6 @@ export class StoreService {
   }
 
   public ClearDataStore(Id: string, data) {
-    return this.http.delete<store>(StoreService.host + 'Store/ClearStore/' + Id, data);
+    return this.http.put<store>(StoreService.host + 'Store/ClearStore/' + Id, data);
   }
 }

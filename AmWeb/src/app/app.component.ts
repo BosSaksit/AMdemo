@@ -31,6 +31,11 @@ export class AppComponent {
       title: 'User',
       url: '/user',
       icon: 'contact'
+    },
+    {
+      title: 'Clear',
+      url: '/clear-store',
+      icon: 'trash'
     }
    
   ];

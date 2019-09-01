@@ -10,40 +10,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditStorePage implements OnInit {
 
-  dataStore: FormGroup;
-  dataStoreModel :store;
-  editStore: any;
-  submit: boolean = false;
+  dataStore: store;
+  IdeditStore: any;
+ 
   constructor(public activate: ActivatedRoute, public storeApi: StoreService, public formbuilder: FormBuilder, public route: Router) {
-    this.editStore = this.activate.snapshot.paramMap.get('_id');
-    console.log(this.editStore);
+   
+    this.IdeditStore = this.activate.snapshot.paramMap.get('_id');
+    console.log(this.IdeditStore);
 
-    this.dataStore = this.formbuilder.group({
-      'idStore': [null, Validators.required],
-      'editProductStore': [null,Validators.required]
-    });
-
-    this.storeApi.GetProductStoreByid(this.editStore).subscribe(it =>{
+    this.storeApi.GetProductStoreByid(this.IdeditStore).subscribe(it => {
       console.log(it);
-      this.dataStore.patchValue(it)
-      console.log(this.dataStore.value);
-      
-      
+      this.dataStore = it;
+      console.log(this.dataStore);
     })
   }
 
   ngOnInit() {
   }
-  
-  log(){
-    console.log(this.dataStore.value);
-    this.dataStoreModel = this.dataStore.value
-    console.log(this.dataStoreModel);
-    
-    this.storeApi.EditDataStore(this.editStore,this.dataStoreModel).subscribe(it =>{
+
+  editlog() {
+    this.storeApi.EditDataStore(this.IdeditStore, this.dataStore).subscribe(it => {
       console.log(it);
-    
     });
-    
+
   }
 }
