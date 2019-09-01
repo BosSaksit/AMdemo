@@ -44,6 +44,7 @@ namespace AMApi.Controllers
                 NameProduct = Productx.NameProduct,
                 TypeProduct = Productx.TypeProduct,
                 PriceProduct = Productx.PriceProduct,
+                TotalProduct = "0",
                 CostProduct = Productx.CostProduct
             };
 
@@ -65,6 +66,7 @@ namespace AMApi.Controllers
                 NameProduct = Productx.NameProduct,
                 TypeProduct = Productx.TypeProduct,
                 PriceProduct = Productx.PriceProduct,
+                TotalProduct = Productx.TotalProduct,
                 CostProduct = Productx.CostProduct
             };
             DataProduct.Remove(_id);
@@ -78,6 +80,40 @@ namespace AMApi.Controllers
         {
             var delete = DataProduct.FirstOrDefault(it => it.IdProduct == id.ToString());
             DataProduct.Remove(delete);
+        }
+
+        [HttpPut("{id}")]
+        public Product EditAddTotalProduct(string id, [FromBody] Product Productx)
+        {
+            var _id = DataProduct.FirstOrDefault(it => it.IdProduct == id.ToString());
+            var getcheck = DataProduct.FirstOrDefault(it => it.IdProduct == id.ToString());
+            int Total = int.Parse(getcheck.TotalProduct);
+            int Add = int.Parse(Productx.TotalProduct);
+            int Totals = 0;
+
+            if (getcheck.TotalProduct == "0")
+            {
+                Total = 0;
+                Totals = Total + Add;
+            }
+            else
+            {
+                Totals = Total + Add;
+            }
+
+            var item = new Product
+            {
+                IdProduct = id,
+                NameProduct = Productx.NameProduct,
+                TypeProduct = Productx.TypeProduct,
+                PriceProduct = Productx.PriceProduct,
+                TotalProduct = Totals.ToString(),
+                CostProduct = Productx.CostProduct
+            };
+            DataProduct.Remove(_id);
+            DataProduct.Add(item);
+            return item;
+
         }
 
     }
