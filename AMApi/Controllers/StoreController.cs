@@ -40,7 +40,11 @@ namespace AMApi.Controllers
             var item = new Store
             {
                 IdStore = id,
-                AddProductStore = addDate      
+                IdUser = Storex.IdUser,
+                NameUser = Storex.NameUser,
+                IdProduct = Storex.IdProduct,
+                NameProduct = Storex.NameProduct,
+                AddProductStore = addDate
             };
 
             DataStore.Add(item);
@@ -54,8 +58,12 @@ namespace AMApi.Controllers
             var editDate = DateTime.Now;
             var item = new Store
             {
-               IdStore = id.ToString(),
-               EditProductStore = editDate
+                IdStore = id.ToString(),
+                IdUser = Storex.IdUser,
+                NameUser = Storex.NameUser,
+                IdProduct = Storex.IdProduct,
+                NameProduct = Storex.NameProduct,
+                EditProductStore = editDate
             };
 
             DataStore.Add(item);
@@ -70,8 +78,8 @@ namespace AMApi.Controllers
             var clearDate = DateTime.Now;
             var item = new Store
             {
-               IdStore = id.ToString(),
-               ClearProductStore = clearDate
+                IdStore = id.ToString(),
+                ClearProductStore = clearDate
             };
 
             DataStore.Add(item);

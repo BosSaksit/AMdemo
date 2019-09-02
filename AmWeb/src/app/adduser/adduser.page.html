@@ -8,5 +8,42 @@
 </ion-header>
 
 <ion-content>
-
+  <form >
+    <ion-item [class.invalid]="submit && f.idUser.errors">
+      <ion-label>รหัสผู้ใช้</ion-label>
+      <ion-input placeholder="รหัสผู้ใช้" formControlName="idUser">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.nameUser.errors">
+      <ion-label>ชื่อผู้ใช้</ion-label>
+      <ion-input placeholder="ชื่อผู้ใช้" formControlName="nameUser">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.username.errors">
+      <ion-label>Username</ion-label>
+      <ion-input placeholder="Username" formControlName="username">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.password.errors">
+      <ion-label>Password</ion-label>
+      <ion-input placeholder="Password" formControlName="password">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.teluser.errors">
+      <ion-label>เบอร์โทร</ion-label>
+      <ion-input placeholder="เบอร์โทร" formControlName="telUser">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.levelUser.errors">
+      <ion-label>Level</ion-label>
+      <ion-input placeholder="Level" formControlName="levelUser">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.addressUser.errors">
+      <ion-label>ที่อยู่</ion-label>
+      <ion-input placeholder="ที่อยู่" formControlName="addressUser">
+      </ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">เพิ่มข้อมูลผู้ใช้</ion-button>
+  </form>
 </ion-content>

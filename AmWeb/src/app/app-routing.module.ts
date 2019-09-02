@@ -13,6 +13,8 @@ const routes: Routes = [
   { path: 'add-store', loadChildren: './add-store/add-store.module#AddStorePageModule' },
   { path: 'clear-store', loadChildren: './clear-store/clear-store.module#ClearStorePageModule' },
   { path: 'edit-clear', loadChildren: './edit-clear/edit-clear.module#EditClearPageModule' },
+  { path: 'edit-user', loadChildren: './edit-user/edit-user.module#EditUserPageModule' },
+
 
 
 ];

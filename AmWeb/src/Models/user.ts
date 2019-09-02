@@ -4,15 +4,17 @@ export class user {
 
         nameUser: string;
 
+        username: string;
+        
+        password: string;
+
         telUser: string;
 
         levelUser: string;
 
         addressUser: string;
 
-        username: string;
         
-        password: string;
 
 
 
