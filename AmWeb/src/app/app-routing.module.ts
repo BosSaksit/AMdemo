@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
-  { path: 'dashborad', loadChildren: './dashborad/dashborad.module#DashboradPageModule' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)},
   { path: 'store', loadChildren: './store/store.module#StorePageModule' },
   { path: 'user', loadChildren: './user/user.module#UserPageModule' },
   { path: 'addproduct', loadChildren: './addproduct/addproduct.module#AddproductPageModule' },
@@ -14,9 +13,14 @@ const routes: Routes = [
   { path: 'clear-store', loadChildren: './clear-store/clear-store.module#ClearStorePageModule' },
   { path: 'edit-clear', loadChildren: './edit-clear/edit-clear.module#EditClearPageModule' },
   { path: 'edit-user', loadChildren: './edit-user/edit-user.module#EditUserPageModule' },
-
-
-
+  { path: 'product', loadChildren: './product/product.module#ProductPageModule' },
+  { path: 'add-product', loadChildren: './add-product/add-product.module#AddProductPageModule' },
+  { path: 'edit-product', loadChildren: './edit-product/edit-product.module#EditProductPageModule' },
+  { path: 'order', loadChildren: './order/order.module#OrderPageModule' },
+  { path: 'order-list', loadChildren: './order-list/order-list.module#OrderListPageModule' },
+  { path: 'order-cancel', loadChildren: './order-cancel/order-cancel.module#OrderCancelPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'dashbroad', loadChildren: './dashbroad/dashbroad.module#DashbroadPageModule' }
 ];
 
 @NgModule({

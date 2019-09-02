@@ -3,7 +3,7 @@ import { StoreService } from "src/app/service/store.service";
 import { store } from 'src/Models/stroe';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-store',
@@ -12,29 +12,24 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 })
 export class AddStorePage implements OnInit {
 
-  dataStore :FormGroup;
-  submit :boolean = false;
-  dataSt :store;
+  dataStore: FormGroup;
+  submit: boolean = false;
+  dataSt: store;
 
-  public dataStoreAll : store;
-  constructor(public storeApi:StoreService,public route:Router,public navCtrl:NavController,public formbuilder:FormBuilder) { 
+  public dataStoreAll: store;
+  constructor(public storeApi: StoreService, public route: Router, public navCtrl: NavController, public formbuilder: FormBuilder) {
     this.dataStore = this.formbuilder.group({
-      'idStore' :[null,Validators.required],
-      'addProductStore':[null,Validators.required]      
+      'idStore': [null, Validators.required],
+      'addProductStore': [null, Validators.required]
     })
   }
 
 
   ngOnInit() {
-    this.storeApi.GetProductStore().subscribe((it) => {
-      console.log(it);
-      this.dataStoreAll = it;
-      console.log(this.dataStoreAll);
-    });
   }
 
   get f() { return this.dataStore.controls; }
-  
+
   async log() {
     this.submit = true;
     console.log(this.dataStore.value);
@@ -49,6 +44,14 @@ export class AddStorePage implements OnInit {
     this.route.navigate(['/edit-store', { _id: id }]);
   }
 
+  ok(){
+    console.log("ok");
+    
+  }
+  cancel(){
+    console.log("cancel");
+    
+  }
 }
 
 

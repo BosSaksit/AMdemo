@@ -33,6 +33,12 @@
       </ion-label>
     </ion-col>
 
+    <ion-col>
+      <ion-label>
+        ลบ
+      </ion-label>
+    </ion-col>
+
   </ion-row>
   <ion-item *ngFor="let u of dataUserAll">
 
@@ -55,7 +61,11 @@
     </ion-col>
 
     <ion-col>
-      <ion-button color="warning" [routerLink]="['/edit-user']">แก้ไขข่อมูล</ion-button>
+      <ion-button color="warning" (click)="EditDataUser(u.idUser)">แก้ไขข่อมูล</ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="danger" (click)="deleteUser(u.idUser)">ลบ</ion-button>
     </ion-col>
 
   </ion-item>

@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage implements OnInit {
+
   public dataUserAll: user;
   constructor(public activate: ActivatedRoute, public userApi: UserService, public route: Router, public navCtrl: NavController, public formbuilder: FormBuilder) { }
 
@@ -21,4 +22,18 @@ export class UserPage implements OnInit {
     });
   }
 
+  deleteUser(idUser) {
+    this.userApi.DeleteDataUser(idUser).subscribe(it => {
+      this.userApi.GetUserAll().subscribe((it) => {
+        console.log(it);
+        this.dataUserAll = it;
+        console.log(this.dataUserAll);
+
+      });
+    });
+  }
+  
+  public EditDataUser(id) {
+    this.route.navigate(['/edit-user', { _id: id }]);
+  }
 }

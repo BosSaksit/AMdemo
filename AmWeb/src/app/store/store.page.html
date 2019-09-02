@@ -10,6 +10,14 @@
 <ion-content padding>
   <h2 text-center>คลังสินค้า</h2>
   <ion-button type="submit" [routerLink]="['/add-store']">เพิ่มสินค้า</ion-button>
+  <ion-item>
+    <ion-label>รายการ</ion-label>
+    <ion-select placeholder="เลือกรายการที่ต้องการ">
+      <ion-select-option>เพิ่มสินค้า</ion-select-option>
+      <ion-select-option>แก้ไขสินค้า</ion-select-option>
+      <ion-select-option>ล้างสินค้า</ion-select-option>
+    </ion-select>
+  </ion-item>
   <ion-row>
     <ion-col>
       <ion-label>
@@ -46,15 +54,6 @@
 
   </ion-item>
 
-  <ion-item>
-
-    <ion-label>รายการ</ion-label>
-    <ion-select placeholder="เลือกรายการที่ต้องการ">
-      <ion-select-option>เพิ่มสินค้า</ion-select-option>
-      <ion-select-option>แก้ไขสินค้า</ion-select-option>
-      <ion-select-option>ล้างสินค้า</ion-select-option>
-    </ion-select>
-  </ion-item>
 
 
 

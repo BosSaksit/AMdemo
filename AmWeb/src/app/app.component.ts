@@ -13,13 +13,8 @@ export class AppComponent {
 
   public appPages = [
     {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
-    },
-    {
-      title: 'dashborad',
-      url: '/dashborad',
+      title: 'dashbroad',
+      url: '/dashbroad',
       icon: 'pie'
     },
     {
@@ -36,7 +31,12 @@ export class AppComponent {
       title: 'Clear',
       url: '/clear-store',
       icon: 'trash'
-    }
+    },
+    {
+      title: 'Order',
+      url: '/order',
+      icon: 'list'
+    },
    
   ];
 

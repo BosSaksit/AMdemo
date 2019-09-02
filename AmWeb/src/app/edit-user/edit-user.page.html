@@ -1,14 +1,18 @@
 <ion-header>
   <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
     <ion-title>editUser</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <h2 text-center>แก้ไขข้อมูลผู้ใช้</h2>
     <form [formGroup]="dataUser" (ngSubmit)="log()">
         <ion-item [class.invalid]="submit && f.idUser.errors">
           <ion-label>รหัสผู้ใช้</ion-label>
-          <ion-input placeholder="รหัสผู้ใช้" formControlName="idUser">
+          <ion-input placeholder="รหัสผู้ใช้" formControlName="idUser" readonly>
           </ion-input>
         </ion-item>
         <ion-item [class.invalid]="submit && f.nameUser.errors">
@@ -26,7 +30,7 @@
           <ion-input placeholder="Password" formControlName="password">
           </ion-input>
         </ion-item>
-        <ion-item [class.invalid]="submit && f.teluser.errors">
+        <ion-item [class.invalid]="submit && f.telUser.errors">
           <ion-label>เบอร์โทร</ion-label>
           <ion-input placeholder="เบอร์โทร" formControlName="telUser">
           </ion-input>
