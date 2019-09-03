@@ -1,12 +1,104 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>product</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <h2 text-center>สินค้า</h2>
+  <ion-button type="submit" [routerLink]="['/add-product']">เพิ่มสินค้า</ion-button>
+  <ion-row>
+    <ion-col>
+      <ion-label>
+        รหัสสินค้า
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        ชื่อสินค้า
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        ประเภทสินค้า
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        ราคาสินค้า
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        ราคาต้นทุน
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        จำนวน
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        แก้ไข
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        ลบ
+      </ion-label>
+    </ion-col>
 
+  </ion-row>
+  <ion-item *ngFor="let p of dataProductAll">
+
+    <ion-col>
+      <ion-label>
+        {{p.idProduct}}
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>
+        {{p.nameProduct}}
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>
+        {{p.typeProduct}}
+      </ion-label>
+    </ion-col>
+
+
+    <ion-col>
+      <ion-label>
+        {{p.priceProduct}}
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>
+        {{p.costProduct}}
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>
+        {{p.totalProduct}}
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="warning" (click)="EditDataProduct(p.idProduct)">แก้ไขข้อมูล</ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="danger" (click)="deleteDataProduct(p.idProduct)">ลบ</ion-button>
+    </ion-col>
+
+  </ion-item>
 </ion-content>
