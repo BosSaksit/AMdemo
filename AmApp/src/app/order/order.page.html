@@ -12,7 +12,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content  >
   <h1>เพิ่มสินค้า</h1>
   <ion-item>
     <ion-label>รหัสสินค้า</ion-label>
@@ -22,34 +22,34 @@
 
   <ion-item>
     <ion-label>ชื่อสินค้า</ion-label>
-    <ion-input placeholder="รหัสสินค้า">
+    <ion-input placeholder="ชื่อสินค้า">
     </ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>ชนิดสินค้า</ion-label>
-    <ion-input placeholder="รหัสสินค้า">
+    <ion-input placeholder="ชนิดสินค้า">
     </ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>ราคาสินค้า</ion-label>
-    <ion-input placeholder="รหัสสินค้า">
+    <ion-input placeholder="ราคาสินค้า">
     </ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>จำนวนสินค้า</ion-label>
-    <ion-input placeholder="รหัสสินค้า">
+    <ion-input placeholder="จำนวนสินค้า">
     </ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>ราคารวม</ion-label>
-    <ion-input placeholder="รหัสสินค้า">
+    <ion-input placeholder="ราคารวม">
     </ion-input>
   </ion-item>
 
-  <ion-button type="submit">เพิ่มข้อมูล</ion-button>
+  <ion-button type="submit"  (click)="presentAlertConfirm()" >เพิ่มข้อมูล</ion-button>
 
 </ion-content>
