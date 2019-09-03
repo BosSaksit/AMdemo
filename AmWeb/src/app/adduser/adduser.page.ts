@@ -37,6 +37,7 @@ export class AdduserPage implements OnInit {
       console.log(it);
     });
   }
+  
   ngOnInit() {
   }
 

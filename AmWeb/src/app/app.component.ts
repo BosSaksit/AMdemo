@@ -23,6 +23,11 @@ export class AppComponent {
       icon: 'cube'
     },
     {
+      title: 'Product',
+      url: '/product',
+      icon: 'basket'
+    },
+    {
       title: 'User',
       url: '/user',
       icon: 'contact'
@@ -34,7 +39,7 @@ export class AppComponent {
     },
     {
       title: 'Order',
-      url: '/order',
+      url: '/order-list',
       icon: 'list'
     },
    

@@ -6,7 +6,6 @@ const routes: Routes = [
   { path: 'login', loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)},
   { path: 'store', loadChildren: './store/store.module#StorePageModule' },
   { path: 'user', loadChildren: './user/user.module#UserPageModule' },
-  { path: 'addproduct', loadChildren: './addproduct/addproduct.module#AddproductPageModule' },
   { path: 'adduser', loadChildren: './adduser/adduser.module#AdduserPageModule' },
   { path: 'edit-store', loadChildren: './edit-store/edit-store.module#EditStorePageModule' },
   { path: 'add-store', loadChildren: './add-store/add-store.module#AddStorePageModule' },

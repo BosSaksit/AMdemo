@@ -1,9 +1,42 @@
 <ion-header>
   <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
     <ion-title>editProduct</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <h2 text-center>แก้ไขข้อมูลสินค้า</h2>
 
+  <form [formGroup]="dataProduct" (ngSubmit)="log()">
+    <ion-item [class.invalid]="submit && f.idProduct.errors">
+      <ion-label>รหัสสินค้า</ion-label>
+      <ion-input placeholder="รหัสสินค้า" formControlName="idProduct">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.nameProduct.errors">
+      <ion-label>ชื่อสินค้า</ion-label>
+      <ion-input placeholder="ชื่อสินค้า" formControlName="nameProduct">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.typeProduct.errors">
+      <ion-label>ชนิดสินค้า</ion-label>
+      <ion-input placeholder="ชนิดสินค้า" formControlName="typeProduct">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.priceProduct.errors">
+      <ion-label>ราคาสินค้า</ion-label>
+      <ion-input placeholder="ราคาสินค้า" formControlName="priceProduct">
+      </ion-input>
+    </ion-item>
+    <ion-item [class.invalid]="submit && f.totalProduct.errors">
+      <ion-label>ราคารวม</ion-label>
+      <ion-input placeholder="ราคารวม" formControlName="totalProduct">
+      </ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">แก้ไขข้อมูลสินค้า</ion-button>
+
+  </form>
 </ion-content>
