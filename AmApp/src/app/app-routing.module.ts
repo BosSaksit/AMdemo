@@ -8,7 +8,10 @@ const routes: Routes = [
   { path: 'detail', loadChildren: './detail/detail.module#DetailPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'list', loadChildren: './list/list.module#ListPageModule' },
-  { path: 'user', loadChildren: './user/user.module#UserPageModule' },
+  { path: 'user', loadChildren: './user/user.module#UserPageModule' },  { path: 'orderdetail', loadChildren: './orderdetail/orderdetail.module#OrderdetailPageModule' },
+
+  
+
 ];
 
 @NgModule({

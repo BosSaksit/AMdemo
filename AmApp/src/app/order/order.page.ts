@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { CallApiService } from '../call-api.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Order } from '../Models/Order';
+
+
+
 
 @Component({
   selector: 'app-order',
@@ -9,11 +14,33 @@ import { CallApiService } from '../call-api.service';
   styleUrls: ['./order.page.scss'],
 })
 export class OrderPage implements OnInit {
+      
+  order:FormGroup;
+  
+  dataorder: Order;
+  
+  
+  constructor(public alertController: AlertController,public route: Router,public callApi:CallApiService, public navCtrl: NavController, public formbuilder: FormBuilder) {
 
-  constructor(public alertController: AlertController,public route: Router,public callApi:CallApiService) { }
+    this.order = this.formbuilder.group({
+      'idOrder': [null],
+      'idProduct': [null],
+      'nameProduct':[null],
+      'amountProduct': [null],
+      'priceOrder': [null],
+      'nameUser': [null],
+      'telUser': [null],
+      'addressUser': [null],
+      'dateOrder': [null],
+      'sendDate': [null],
+      'status': [null],
+     
+    })
+   }
+   get f() { return this.order.controls; }
 
-  ngOnInit() {
-  }
+
+ 
 
   async presentAlertConfirm() {
     const alert = await this.alertController.create({
@@ -30,6 +57,19 @@ export class OrderPage implements OnInit {
         }, {
           text: 'ok',
           handler: () => {
+            
+            
+            console.log(this.order.value);
+            console.log(this.order);
+            this.dataorder = this.order.value;
+            this.callApi.AddOrder(this.dataorder).subscribe(it =>{
+              console.log(it);
+              
+            });
+            
+             
+              
+
             this.route.navigate(['/list']);
           }
         }
@@ -37,5 +77,11 @@ export class OrderPage implements OnInit {
     });
 
     await alert.present();
+  } 
+
+
+  ngOnInit() {
   }
+
+
 }

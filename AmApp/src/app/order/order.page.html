@@ -12,44 +12,52 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  >
-  <h1>เพิ่มสินค้า</h1>
+<ion-content>
+  <form [formGroup]="order"(ngSubmit)="presentAlertConfirm()">
+  <h1>สั่งซื้อ</h1>
+  
   <ion-item>
     <ion-label>รหัสสินค้า</ion-label>
-    <ion-input placeholder="รหัสสินค้า">
+    <ion-input placeholder="รหัสสินค้า" formControlName="idProduct">
     </ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>ชื่อสินค้า</ion-label>
-    <ion-input placeholder="ชื่อสินค้า">
-    </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>ชนิดสินค้า</ion-label>
-    <ion-input placeholder="ชนิดสินค้า">
-    </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>ราคาสินค้า</ion-label>
-    <ion-input placeholder="ราคาสินค้า">
+    <ion-input placeholder="ชื่อสินค้า" formControlName="nameProduct">
     </ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>จำนวนสินค้า</ion-label>
-    <ion-input placeholder="จำนวนสินค้า">
+    <ion-input placeholder="จำนวนสินค้า" formControlName="amountProduct">
     </ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>ราคารวม</ion-label>
-    <ion-input placeholder="ราคารวม">
+    <ion-input placeholder="ราคารวม" formControlName="priceOrder">
     </ion-input>
   </ion-item>
 
-  <ion-button type="submit"  (click)="presentAlertConfirm()" >เพิ่มข้อมูล</ion-button>
+  <ion-item>
+    <ion-label>ชื่อลูกค้า</ion-label>
+    <ion-input placeholder="ชื่อลูกค้า" formControlName="nameUser">
+    </ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label>เบอร์โทรลูกค้า</ion-label>
+    <ion-input placeholder="เบอร์โทรลูกค้า" formControlName="telUser">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>ที่อยู่</ion-label>
+    <ion-input placeholder="ที่อยู่" formControlName="addressUser">
+    </ion-input>
+  </ion-item>
+
+  <ion-button type="submit">เพิ่มข้อมูล</ion-button>
+</form>
 </ion-content>

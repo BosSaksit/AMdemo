@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CallApiService } from '../call-api.service';
 import { Product } from '../Models/Product';
+import { Order } from '../Models/Order';
 
 @Component({
   selector: 'app-list',
@@ -10,21 +11,25 @@ import { Product } from '../Models/Product';
 })
 export class ListPage implements OnInit {
 
-  dataProduct : Product;
+  dataOrder : Order;
+  
 
   constructor(public route: Router,public callApi:CallApiService) { }
 
   ngOnInit() {
     this.callApi.GetListAllProduct().subscribe(it =>{
       console.log(it);
-      this.dataProduct = it;
-      console.log(this.dataProduct);
-      
-      
+      this.dataOrder = it;
+      console.log(this.dataOrder);  
     })
   }
   
   gotoOrder() {
     this.route.navigate(['/order']);
+  }
+
+
+  gotoOrderdetail(id){
+    this.route.navigate(['/orderdetail',{_id :id}]);
   }
 }
