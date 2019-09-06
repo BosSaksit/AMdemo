@@ -22,13 +22,13 @@ namespace AMApi.Controllers
         };
 
          [HttpGet]
-        public ActionResult<IEnumerable<Order>> GetProductAll()
+        public ActionResult<IEnumerable<Order>> GetOrderAll()
         {
             return DataOrder.ToList();
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Order> GetProductById(string id)
+        public ActionResult<Order> GetOrderById(string id)
         {
             return DataOrder.FirstOrDefault(it => it.IdOrder == id.ToString());
         }
