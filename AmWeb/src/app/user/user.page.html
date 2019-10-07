@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <h2 text-center>User</h2>
+  <!-- <h2 text-center>User</h2>
   <ion-button type="submit" [routerLink]="['/adduser']">เพิ่มUser</ion-button>
   <ion-row>
     <ion-col>
@@ -61,11 +61,73 @@
     </ion-col>
 
     <ion-col>
-      <ion-button color="warning" (click)="EditDataUser(u.idUser)">แก้ไขข่อมูล</ion-button>
+      <ion-button color="warning" (click)="EditDataUser(u.idUser)">แก้ไขขอมูล</ion-button>
     </ion-col>
 
     <ion-col>
       <ion-button color="danger" (click)="deleteUser(u.idUser)">ลบ</ion-button>
+    </ion-col>
+
+  </ion-item> -->
+
+  <h2 text-center>User</h2>
+  <ion-button type="submit" [routerLink]="['/adduser']">เพิ่มUser</ion-button>
+  <ion-row>
+    <ion-col>
+      <ion-label>
+        Username
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        เบอร์โทร
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>
+        ระดับ
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>
+        แก้ไข
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>
+        ลบ
+      </ion-label>
+    </ion-col>
+
+  </ion-row>
+  <ion-item *ngFor="let u of listUser">
+
+    <ion-col>
+      <ion-label>
+        {{u.u_username}}
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>
+        {{u.user_tel}}
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>
+        {{u.user_level}}
+      </ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="warning" (click)="EditDataUser(u.users_id)">แก้ไขขอมูล</ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="danger" (click)="deleteUser(u.users_id)">ลบ</ion-button>
     </ion-col>
 
   </ion-item>

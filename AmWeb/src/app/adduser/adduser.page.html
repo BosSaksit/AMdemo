@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-    <h2 text-center>เพิ่มข้อมูลผู้ใช้</h2>
+    <!-- <h2 text-center>เพิ่มข้อมูลผู้ใช้</h2>
   <form [formGroup]="dataUser" (ngSubmit)="log()">
     <ion-item [class.invalid]="submit && f.idUser.errors">
       <ion-label>รหัสผู้ใช้</ion-label>
@@ -46,5 +46,37 @@
       </ion-input>
     </ion-item>
     <ion-button expand="full" type="submit">เพิ่มข้อมูลผู้ใช้</ion-button>
-  </form>
+  </form> -->
+
+  <h2 text-center>เพิ่มข้อมูลผู้ใช้</h2>
+  <ion-item>
+    <ion-label>รหัสผู้ใช้</ion-label>
+    <ion-input placeholder="รหัสผู้ใช้" [(ngModel)]="DataUser.users_id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>ชื่อผุ้ใช้</ion-label>
+    <ion-input placeholder="ชื่อผุ้ใช้" [(ngModel)]="DataUser.user_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>username</ion-label>
+    <ion-input placeholder="username" [(ngModel)]="DataUser.u_username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>password</ion-label>
+    <ion-input placeholder="password" [(ngModel)]="DataUser.u_password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>เบอร์โทร</ion-label>
+    <ion-input placeholder="เบอร์โทร" [(ngModel)]="DataUser.user_tel"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>ระดับ</ion-label>
+    <ion-input placeholder="ระดับ" [(ngModel)]="DataUser.user_level"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>ที่อยู่</ion-label>
+    <ion-input placeholder="ที่อยู่" [(ngModel)]="DataUser.user_address"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="addDataUser()">เพิ่มสินค้า</ion-button>
+  
 </ion-content>
