@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>editUser</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <h2 text-center>แก้ไขข้อมูลผู้ใช้</h2>
+  <!-- <h2 text-center>แก้ไขข้อมูลผู้ใช้</h2>
     <form [formGroup]="dataUser" (ngSubmit)="log()">
         <ion-item [class.invalid]="submit && f.idUser.errors">
           <ion-label>รหัสผู้ใช้</ion-label>
@@ -46,5 +46,39 @@
           </ion-input>
         </ion-item>
         <ion-button expand="full" type="submit">แก้ไขข้อมูล</ion-button>
-      </form>
+      </form> -->
+
+  <h2 text-center>แก้ไขข้อมูลผู้ใช้</h2>
+
+
+  <ion-item>
+    <ion-label>รหัสผู้ใช้</ion-label>
+    <ion-input placeholder="รหัสผู้ใช้" [(ngModel)]="dataUser.users_id" readonly></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>ชื่อผุ้ใช้</ion-label>
+    <ion-input placeholder="ชื่อผุ้ใช้" [(ngModel)]="dataUser.user_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>username</ion-label>
+    <ion-input placeholder="username" [(ngModel)]="dataUser.u_username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>password</ion-label>
+    <ion-input placeholder="password" [(ngModel)]="dataUser.u_password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>เบอร์โทร</ion-label>
+    <ion-input placeholder="เบอร์โทร" [(ngModel)]="dataUser.user_tel"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>ระดับ</ion-label>
+    <ion-input placeholder="ระดับ" [(ngModel)]="dataUser.user_level"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>ที่อยู่</ion-label>
+    <ion-input placeholder="ที่อยู่" [(ngModel)]="dataUser.user_address"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="editDataProduct()">แก้ไข</ion-button>
+
 </ion-content>
